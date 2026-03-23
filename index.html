@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yomabi - Privacy Policy</title>
+    <style>
+        :root {
+            --bg: #ffffff;
+            --text: #1a1a1a;
+            --text-secondary: #555555;
+            --accent: #2563eb;
+            --border: #e5e7eb;
+            --card-bg: #f9fafb;
+            --heading: #111827;
+        }
+
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --bg: #111827;
+                --text: #e5e7eb;
+                --text-secondary: #9ca3af;
+                --accent: #60a5fa;
+                --border: #374151;
+                --card-bg: #1f2937;
+                --heading: #f9fafb;
+            }
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            background-color: var(--bg);
+            color: var(--text);
+            line-height: 1.7;
+            font-size: 16px;
+        }
+
+        .container {
+            max-width: 720px;
+            margin: 0 auto;
+            padding: 48px 24px 80px;
+        }
+
+        header {
+            margin-bottom: 48px;
+            padding-bottom: 24px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        header h1 {
+            font-size: 2rem;
+            color: var(--heading);
+            margin-bottom: 4px;
+            font-weight: 700;
+        }
+
+        header p {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+        }
+
+        h2 {
+            font-size: 1.35rem;
+            color: var(--heading);
+            margin-top: 40px;
+            margin-bottom: 12px;
+            font-weight: 600;
+        }
+
+        h3 {
+            font-size: 1.1rem;
+            color: var(--heading);
+            margin-top: 24px;
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+
+        p {
+            margin-bottom: 12px;
+        }
+
+        ul {
+            margin-bottom: 12px;
+            padding-left: 24px;
+        }
+
+        li {
+            margin-bottom: 6px;
+        }
+
+        a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        .info-box {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 16px 20px;
+            margin: 16px 0;
+        }
+
+        .info-box p:last-child {
+            margin-bottom: 0;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 16px 0;
+            font-size: 0.95rem;
+        }
+
+        th, td {
+            text-align: left;
+            padding: 10px 12px;
+            border: 1px solid var(--border);
+        }
+
+        th {
+            background-color: var(--card-bg);
+            font-weight: 600;
+            color: var(--heading);
+        }
+
+        footer {
+            margin-top: 56px;
+            padding-top: 24px;
+            border-top: 1px solid var(--border);
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Yomabi Privacy Policy</h1>
+            <p>Effective date: March 23, 2026</p>
+        </header>
+
+        <section>
+            <p>
+                This Privacy Policy describes how Yomabi ("the App", "we", "us") collects, uses, and
+                protects information when you use our Android application. Yomabi is a Japanese
+                dictionary and learning app that provides dictionary lookups, OCR-based text
+                recognition, flashcard-based spaced repetition, and other language learning tools.
+            </p>
+            <div class="info-box">
+                <p>
+                    <strong>In short:</strong> Yomabi is designed with privacy in mind. All your
+                    personal study data stays on your device. Analytics are disabled by default and
+                    require your explicit opt-in. No user accounts or server-side storage exist.
+                </p>
+            </div>
+        </section>
+
+        <h2>1. Information We Collect</h2>
+
+        <h3>1.1 Data Stored Locally on Your Device</h3>
+        <p>The following data is stored entirely on your device and is never transmitted to any server:</p>
+        <ul>
+            <li>Search history</li>
+            <li>Favorites and bookmarks</li>
+            <li>Flashcards, decks, and SRS (spaced repetition) progress</li>
+            <li>Flashcard image and audio attachments</li>
+            <li>User preferences and settings</li>
+            <li>In-app purchase status</li>
+        </ul>
+        <p>
+            This data is stored in local Room databases and Android DataStore on your device. You have
+            full control over this data and can delete it at any time by clearing the app's data in
+            your device settings or by uninstalling the app.
+        </p>
+
+        <h3>1.2 Firebase Analytics (Opt-In)</h3>
+        <p>
+            Yomabi integrates Firebase Analytics to help us understand how the app is used and to
+            improve the experience. Analytics collection is <strong>disabled by default</strong>. On
+            first launch, a consent dialog asks whether you would like to enable anonymous usage
+            analytics. You can change this choice at any time in the app's Settings.
+        </p>
+        <p>When enabled, Firebase Analytics collects:</p>
+        <ul>
+            <li>Anonymous usage events (e.g., screen views, searches, flashcard creation, OCR usage)</li>
+            <li>General device information (device model, OS version, screen size)</li>
+            <li>App version and session duration</li>
+        </ul>
+        <p>
+            This data is anonymous and aggregated. It does not include your search queries, flashcard
+            content, or any personal study data.
+        </p>
+
+        <h3>1.3 Firebase Crashlytics (Always On)</h3>
+        <p>
+            Yomabi uses Firebase Crashlytics to collect crash reports and stability data. This helps
+            us identify and fix bugs. Crashlytics is always active and is not gated by user consent,
+            as it is essential for maintaining app stability.
+        </p>
+        <p>Crashlytics collects:</p>
+        <ul>
+            <li>Crash stack traces and error logs</li>
+            <li>Device model and manufacturer</li>
+            <li>Operating system version</li>
+            <li>App version</li>
+        </ul>
+        <p>Crash data does not include any of your personal study content.</p>
+
+        <h3>1.4 Google AdMob</h3>
+        <p>
+            Yomabi displays rewarded video ads (via Google AdMob) that provide bonus OCR lookups. The
+            AdMob SDK may collect certain data in accordance with Google's advertising policies,
+            including:
+        </p>
+        <ul>
+            <li>Device identifiers (e.g., Advertising ID)</li>
+            <li>Ad interaction data (views, clicks)</li>
+            <li>General device and network information</li>
+        </ul>
+        <p>
+            This data is collected and processed by Google. Please refer to
+            <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google's Privacy Policy</a>
+            for details on how Google handles this information.
+        </p>
+
+        <h3>1.5 Google Play Billing</h3>
+        <p>
+            Yomabi offers in-app purchases (Pro upgrade and optional tips) through Google Play
+            Billing. Purchase transactions are handled by Google Play. Purchase tokens are stored
+            locally on your device only. We do not operate any server that processes or stores
+            payment information.
+        </p>
+
+        <h2>2. Device Permissions</h2>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Permission</th>
+                    <th>Purpose</th>
+                    <th>Data Handling</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Camera</strong></td>
+                    <td>OCR text recognition from camera or photos</td>
+                    <td>All images are processed entirely on-device using NCNN/PaddleOCR. No images are sent to any server.</td>
+                </tr>
+                <tr>
+                    <td><strong>Microphone</strong></td>
+                    <td>Voice search (speech-to-text)</td>
+                    <td>Audio is processed via Android's on-device speech recognizer. No audio is transmitted externally.</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h2>3. Third-Party Services</h2>
+        <p>
+            Yomabi uses the following third-party services. Each service has its own privacy policy
+            governing data it collects:
+        </p>
+        <ul>
+            <li>
+                <strong>Firebase Analytics</strong> &mdash;
+                <a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener">Firebase Privacy Information</a>
+            </li>
+            <li>
+                <strong>Firebase Crashlytics</strong> &mdash;
+                <a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener">Firebase Privacy Information</a>
+            </li>
+            <li>
+                <strong>Google AdMob</strong> &mdash;
+                <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google Privacy Policy</a>
+            </li>
+            <li>
+                <strong>Google Play Services / Billing</strong> &mdash;
+                <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google Privacy Policy</a>
+            </li>
+        </ul>
+        <p>
+            Beyond these services, Yomabi does not share data with any other third-party services,
+            advertisers, or data brokers.
+        </p>
+
+        <h2>4. Data Retention and Deletion</h2>
+        <p>
+            All user study data (search history, favorites, flashcards, SRS progress) is stored
+            locally on your device and is retained until you choose to delete it. You can delete your
+            data at any time by:
+        </p>
+        <ul>
+            <li>Using in-app features to clear individual items (e.g., deleting flashcard decks, clearing search history)</li>
+            <li>Clearing the app's data in your Android device settings</li>
+            <li>Uninstalling the app</li>
+        </ul>
+        <p>
+            For data collected by Firebase Analytics and Crashlytics, Google's standard data retention
+            policies apply. Firebase Analytics data is retained for up to 14 months by default.
+            Crashlytics data is retained for 90 days.
+        </p>
+
+        <h2>5. GDPR Compliance (European Users)</h2>
+        <p>
+            If you are located in the European Economic Area (EEA), you have certain rights under the
+            General Data Protection Regulation (GDPR):
+        </p>
+        <ul>
+            <li>
+                <strong>Consent:</strong> Firebase Analytics is disabled by default and requires your
+                explicit opt-in. You can withdraw consent at any time in the app's Settings.
+            </li>
+            <li>
+                <strong>Right to access and deletion:</strong> Since all personal study data is stored
+                locally on your device, you have full and direct control over it. You can view, modify,
+                or delete your data at any time.
+            </li>
+            <li>
+                <strong>Data minimization:</strong> The app collects only the minimum data necessary
+                for its functionality. Analytics events are anonymous and do not contain personal study
+                content.
+            </li>
+            <li>
+                <strong>Legitimate interest:</strong> Crashlytics data collection is based on the
+                legitimate interest of maintaining app stability and fixing crashes, which directly
+                benefits all users.
+            </li>
+        </ul>
+
+        <h2>6. Children's Privacy</h2>
+        <p>
+            Yomabi is not directed at children under the age of 13. We do not knowingly collect
+            personal information from children under 13. If you are a parent or guardian and believe
+            your child has provided data through the app, please contact us and we will take steps to
+            address the situation.
+        </p>
+
+        <h2>7. Security</h2>
+        <p>
+            Because Yomabi stores all user data locally on your device, the security of your data
+            depends on your device's own security measures (screen lock, encryption, etc.). We
+            recommend keeping your device's operating system up to date and using a secure lock screen.
+        </p>
+        <p>
+            Data transmitted to Firebase and AdMob is encrypted in transit using industry-standard
+            protocols (TLS/SSL).
+        </p>
+
+        <h2>8. Changes to This Privacy Policy</h2>
+        <p>
+            We may update this Privacy Policy from time to time. When we do, we will revise the
+            "Effective date" at the top of this page. We encourage you to review this Privacy Policy
+            periodically to stay informed about how we protect your information. Continued use of the
+            app after changes constitutes acceptance of the updated policy.
+        </p>
+
+        <h2>9. Contact Us</h2>
+        <p>
+            If you have any questions or concerns about this Privacy Policy or Yomabi's data
+            practices, please contact us at:
+        </p>
+        <p>
+            <a href="mailto:b-tok-contact@proton.me">b-tok-contact@proton.me</a>
+        </p>
+
+        <footer>
+            <p>&copy; 2026 Yomabi. All rights reserved.</p>
+        </footer>
+    </div>
+</body>
+</html>
