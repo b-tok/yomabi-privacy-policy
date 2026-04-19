@@ -147,7 +147,7 @@
     <div class="container">
         <header>
             <h1>Yomabi Privacy Policy</h1>
-            <p>Effective date: March 23, 2026</p>
+            <p>Effective date: April 19, 2026</p>
         </header>
 
         <section>
@@ -202,11 +202,11 @@
             content, or any personal study data.
         </p>
 
-        <h3>1.3 Firebase Crashlytics (Always On)</h3>
+        <h3>1.3 Firebase Crashlytics (Legitimate Interest)</h3>
         <p>
-            Yomabi uses Firebase Crashlytics to collect crash reports and stability data. This helps
-            us identify and fix bugs. Crashlytics is always active and is not gated by user consent,
-            as it is essential for maintaining app stability.
+            Yomabi uses Firebase Crashlytics to collect crash reports and stability data so we can
+            identify and fix bugs. Crashlytics runs under our legitimate interest (GDPR Art. 6(1)(f))
+            in maintaining the app's stability and is not gated by the usage analytics toggle.
         </p>
         <p>Crashlytics collects:</p>
         <ul>
@@ -214,10 +214,47 @@
             <li>Device model and manufacturer</li>
             <li>Operating system version</li>
             <li>App version</li>
+            <li>A Firebase Installation ID (see Section 1.5)</li>
         </ul>
-        <p>Crash data does not include any of your personal study content.</p>
+        <p>
+            Crash data does not include any of your personal study content, search queries, or
+            flashcard data. To object to this processing under Art. 21 GDPR, please contact us
+            using the address in Section 9; you can also clear the app's data to reset the FID or
+            uninstall the app to stop all future crash reports.
+        </p>
 
-        <h3>1.4 Google AdMob</h3>
+        <h3>1.4 Firebase Remote Config (Legitimate Interest)</h3>
+        <p>
+            Yomabi uses Firebase Remote Config to adjust certain non-personal app parameters without
+            requiring a new app release &mdash; for example, the daily free OCR lookup limit, the
+            number of rewarded ads available per day, whether the Plus upgrade prompt is shown, and
+            the minimum supported app version.
+        </p>
+        <p>
+            Remote Config fetches run at app start on the legal basis of our legitimate interest
+            (GDPR Art. 6(1)(f)) in being able to operate and tune the app's configuration without
+            shipping a new release for every change. Each fetch transmits a Firebase Installation ID
+            (see Section 1.5) and basic app / SDK metadata (package name, app version, locale) to
+            Google. No behavioural analytics, no search queries, and no personal study content are
+            involved. To object under Art. 21 GDPR, please contact us using the address in
+            Section 9; you can also clear the app's data to reset the FID or uninstall the app to
+            stop all future requests.
+        </p>
+
+        <h3>1.5 Firebase Installation ID</h3>
+        <p>
+            Any Firebase service that makes a network request &mdash; Crashlytics and Remote Config
+            (always on under legitimate interest) and Analytics (only after you opt in) &mdash;
+            transmits a Firebase Installation ID (FID). The FID is a randomly generated identifier
+            that represents your installation of Yomabi. Google uses it to associate requests from
+            the same installation across the Firebase services that are active.
+        </p>
+        <p>
+            The FID is reset if you clear the app's data or reinstall Yomabi. It is not linked to
+            your Google account and is not shared with any third party other than Google.
+        </p>
+
+        <h3>1.6 Google AdMob</h3>
         <p>
             Yomabi displays rewarded video ads (via Google AdMob) that provide bonus OCR lookups. The
             AdMob SDK may collect certain data in accordance with Google's advertising policies,
@@ -234,7 +271,7 @@
             for details on how Google handles this information.
         </p>
 
-        <h3>1.5 Google Play Billing</h3>
+        <h3>1.7 Google Play Billing</h3>
         <p>
             Yomabi offers in-app purchases (Pro upgrade and optional tips) through Google Play
             Billing. Purchase transactions are handled by Google Play. Purchase tokens are stored
@@ -281,6 +318,10 @@
                 <a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener">Firebase Privacy Information</a>
             </li>
             <li>
+                <strong>Firebase Remote Config</strong> &mdash;
+                <a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener">Firebase Privacy Information</a>
+            </li>
+            <li>
                 <strong>Google AdMob</strong> &mdash;
                 <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google Privacy Policy</a>
             </li>
@@ -318,8 +359,18 @@
         </p>
         <ul>
             <li>
-                <strong>Consent:</strong> Firebase Analytics is disabled by default and requires your
-                explicit opt-in. You can withdraw consent at any time in the app's Settings.
+                <strong>Consent (Analytics):</strong> Firebase Analytics is disabled by default and
+                requires your explicit opt-in. You can withdraw consent at any time in the app's
+                Settings, and declining keeps it fully off.
+            </li>
+            <li>
+                <strong>Legitimate interest (Crashlytics &amp; Remote Config):</strong> Crashlytics
+                (for app-stability and bug fixes) and Remote Config (for tuning quotas, feature flags
+                and the minimum supported version without shipping a new release) are processed under
+                GDPR Art. 6(1)(f). Each transmits a random per-install FID plus minimal technical
+                metadata &mdash; no behavioural analytics and no personal study content. To object
+                under Art. 21, contact us (Section 9); clearing the app's data resets the FID, and
+                uninstalling stops all future requests.
             </li>
             <li>
                 <strong>Right to access and deletion:</strong> Since all personal study data is stored
@@ -329,12 +380,8 @@
             <li>
                 <strong>Data minimization:</strong> The app collects only the minimum data necessary
                 for its functionality. Analytics events are anonymous and do not contain personal study
-                content.
-            </li>
-            <li>
-                <strong>Legitimate interest:</strong> Crashlytics data collection is based on the
-                legitimate interest of maintaining app stability and fixing crashes, which directly
-                benefits all users.
+                content. The Firebase Installation ID is randomly generated and is reset when you clear
+                app data or reinstall.
             </li>
         </ul>
 
