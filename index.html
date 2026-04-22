@@ -220,7 +220,7 @@
         <p>
             Crash data does not include any of your personal study content, search queries, or
             flashcard data. To object to this processing under Art. 21 GDPR, please contact us
-            using the address in Section 9; you can also clear the app's data to reset the FID or
+            using the address in Section 10; you can also clear the app's data to reset the FID or
             uninstall the app to stop all future crash reports.
         </p>
 
@@ -238,7 +238,7 @@
             (see Section 1.5) and basic app / SDK metadata (package name, app version, locale) to
             Google. No behavioural analytics, no search queries, and no personal study content are
             involved. To object under Art. 21 GDPR, please contact us using the address in
-            Section 9; you can also clear the app's data to reset the FID or uninstall the app to
+            Section 10; you can also clear the app's data to reset the FID or uninstall the app to
             stop all future requests.
         </p>
 
@@ -255,19 +255,43 @@
             your Google account and is not shared with any third party other than Google.
         </p>
 
-        <h3>1.6 Google AdMob</h3>
+        <h3>1.6 Google AdMob and User Messaging Platform (UMP)</h3>
         <p>
             Yomabi displays rewarded video ads (via Google AdMob) that provide bonus OCR lookups. The
             AdMob SDK may collect certain data in accordance with Google's advertising policies,
             including:
         </p>
         <ul>
-            <li>Device identifiers (e.g., Advertising ID)</li>
+            <li>Device identifiers (e.g., Advertising ID on Android, IDFA on iOS)</li>
             <li>Ad interaction data (views, clicks)</li>
             <li>General device and network information</li>
+            <li>Coarse location derived from IP address</li>
         </ul>
         <p>
-            This data is collected and processed by Google. Please refer to
+            <strong>Consent (EEA / UK / Switzerland).</strong> In the European Economic Area, the
+            United Kingdom, and Switzerland, Google's User Messaging Platform (UMP) shows a consent
+            dialog on first launch that lets you choose whether Google and its ad partners may
+            process your data for personalized advertising and related purposes. If you decline,
+            non-personalized ads are shown instead. You can re-open this consent form at any time
+            via <strong>Settings &rarr; Ad Privacy Settings</strong>.
+        </p>
+        <p>
+            <strong>App Tracking Transparency (iOS).</strong> On iOS 14.5 and later, before any
+            ad-tracking identifier (IDFA) is read, the operating system shows a system-level
+            &ldquo;Allow Tracking?&rdquo; prompt (App Tracking Transparency). If you choose
+            &ldquo;Ask App Not to Track&rdquo;, the IDFA is not shared and non-personalized ads
+            are shown.
+        </p>
+        <p>
+            <strong>US state privacy laws (CCPA / CPRA and similar).</strong> Residents of
+            California and other US states with comparable privacy laws may use the same UMP
+            consent form to opt out of the sale or sharing of personal information for targeted
+            advertising. Selecting the &ldquo;Do not sell or share my personal information&rdquo;
+            option in that form instructs Google and its ad partners to apply the Global Privacy
+            Control / US opt-out signal. Yomabi itself does not sell personal information.
+        </p>
+        <p>
+            Data collected by AdMob is processed by Google. Please refer to
             <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google's Privacy Policy</a>
             for details on how Google handles this information.
         </p>
@@ -279,6 +303,23 @@
             (StoreKit) on iOS. Purchase transactions are handled by Google or Apple respectively.
             Purchase tokens or transaction identifiers are stored locally on your device only. We
             do not operate any server that processes or stores payment information.
+        </p>
+
+        <h3>1.8 Bug Reports (User-Initiated)</h3>
+        <p>
+            If you tap <strong>Send Feedback</strong> in Settings and choose to submit a bug
+            report, the following is transmitted to a Google Apps Script endpoint we control:
+        </p>
+        <ul>
+            <li>The text description you typed</li>
+            <li>A random per-install identifier so we can group related reports</li>
+            <li>Device model, OS version, app version, and locale</li>
+            <li>A timestamp</li>
+        </ul>
+        <p>
+            Bug reports are only sent when you explicitly tap the submit button. The payload is
+            signed with HMAC-SHA256 before transmission so we can reject forged submissions. The
+            random per-install identifier resets when you clear app data or reinstall Yomabi.
         </p>
 
         <h2>2. Device Permissions</h2>
@@ -295,12 +336,22 @@
                 <tr>
                     <td><strong>Camera</strong></td>
                     <td>OCR text recognition from camera or photos</td>
-                    <td>All images are processed entirely on-device using local OCR models. No images are sent to any server.</td>
+                    <td>All images are processed entirely on-device using local OCR models (PaddleOCR on Android, Apple Vision / ML Kit on iOS). No images are sent to any server.</td>
                 </tr>
                 <tr>
                     <td><strong>Microphone / Speech Recognition</strong></td>
                     <td>Voice search (speech-to-text)</td>
                     <td>Audio is processed on-device via the platform speech recognizer (Android SpeechRecognizer / iOS SFSpeechRecognizer). No audio is transmitted to Yomabi's servers.</td>
+                </tr>
+                <tr>
+                    <td><strong>Photo Library</strong></td>
+                    <td>Attaching images to flashcards; importing saved screenshots for OCR</td>
+                    <td>Images remain on-device. Nothing is uploaded.</td>
+                </tr>
+                <tr>
+                    <td><strong>App Tracking Transparency (iOS)</strong></td>
+                    <td>Permission to read the IDFA for personalized ads</td>
+                    <td>See Section 1.6. Declining keeps ads fully functional (non-personalized).</td>
                 </tr>
             </tbody>
         </table>
@@ -324,7 +375,7 @@
                 <a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener">Firebase Privacy Information</a>
             </li>
             <li>
-                <strong>Google AdMob</strong> &mdash;
+                <strong>Google AdMob + User Messaging Platform</strong> &mdash;
                 <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google Privacy Policy</a>
             </li>
             <li>
@@ -334,6 +385,10 @@
             <li>
                 <strong>Apple In-App Purchase (StoreKit)</strong> (iOS) &mdash;
                 <a href="https://www.apple.com/legal/privacy/" target="_blank" rel="noopener">Apple Privacy Policy</a>
+            </li>
+            <li>
+                <strong>Google Apps Script</strong> (user-initiated bug reports only) &mdash;
+                <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google Privacy Policy</a>
             </li>
         </ul>
         <p>
@@ -357,41 +412,111 @@
             policies apply. Firebase Analytics data is retained for up to 14 months by default.
             Crashlytics data is retained for 90 days.
         </p>
-
-        <h2>5. GDPR Compliance (European Users)</h2>
         <p>
-            If you are located in the European Economic Area (EEA), you have certain rights under the
-            General Data Protection Regulation (GDPR):
+            Bug report submissions are retained in a private Google Sheet for as long as we consider
+            them useful for diagnosing the reported issue, and may be deleted on request using the
+            address in Section 10.
+        </p>
+
+        <h2>5. Your Rights Under the GDPR (European Users)</h2>
+        <p>
+            If you are located in the European Economic Area (EEA), the United Kingdom, or
+            Switzerland, you have the following rights under the General Data Protection Regulation
+            (GDPR) / UK GDPR:
         </p>
         <ul>
             <li>
-                <strong>Consent (Analytics):</strong> Firebase Analytics is disabled by default and
-                requires your explicit opt-in. You can withdraw consent at any time in the app's
-                Settings, and declining keeps it fully off.
+                <strong>Right of access (Art. 15):</strong> You may ask what personal data we process
+                about you. Because personal study data lives only on your device, you already have
+                full access via the app. For anything we hold server-side (bug reports you
+                submitted), contact us using Section 10.
             </li>
             <li>
-                <strong>Legitimate interest (Crashlytics &amp; Remote Config):</strong> Crashlytics
-                (for app-stability and bug fixes) and Remote Config (for tuning quotas, feature flags
-                and the minimum supported version without shipping a new release) are processed under
-                GDPR Art. 6(1)(f). Each transmits a random per-install FID plus minimal technical
-                metadata &mdash; no behavioural analytics and no personal study content. To object
-                under Art. 21, contact us (Section 9); clearing the app's data resets the FID, and
-                uninstalling stops all future requests.
+                <strong>Right to rectification (Art. 16):</strong> You may correct inaccurate data.
+                Study data is editable in-app; for bug-report contents, contact us.
             </li>
             <li>
-                <strong>Right to access and deletion:</strong> Since all personal study data is stored
-                locally on your device, you have full and direct control over it. You can view, modify,
-                or delete your data at any time.
+                <strong>Right to erasure / &ldquo;right to be forgotten&rdquo; (Art. 17):</strong>
+                You may clear app data or uninstall Yomabi to erase everything stored on-device.
+                For server-held bug reports, contact us.
             </li>
             <li>
-                <strong>Data minimization:</strong> The app collects only the minimum data necessary
-                for its functionality. Analytics events are anonymous and do not contain personal study
-                content. The Firebase Installation ID is randomly generated and is reset when you clear
-                app data or reinstall.
+                <strong>Right to restriction of processing (Art. 18):</strong> You may ask us to
+                limit how we process your data. Contact us using Section 10.
+            </li>
+            <li>
+                <strong>Right to data portability (Art. 20):</strong> Because study data stays
+                on-device, you can already export flashcards and decks in-app. For anything else,
+                contact us.
+            </li>
+            <li>
+                <strong>Right to object (Art. 21):</strong> You may object to processing based on
+                legitimate interest &mdash; specifically Crashlytics and Remote Config. Contact us
+                and we will stop processing; you can also clear app data (which resets the FID) or
+                uninstall (which stops all future requests).
+            </li>
+            <li>
+                <strong>Right to withdraw consent:</strong> For Analytics (consent-based), you may
+                withdraw consent at any time in Settings.
+            </li>
+            <li>
+                <strong>Right to lodge a complaint (Art. 77):</strong> You may complain to the
+                supervisory authority in your member state.
+            </li>
+        </ul>
+        <p>
+            <strong>Data controller for GDPR purposes:</strong> Boris Tokic. Contact details in
+            Section 10.
+        </p>
+        <p>
+            <strong>Legal bases (summary):</strong>
+        </p>
+        <ul>
+            <li>
+                Consent (Art. 6(1)(a)): Firebase Analytics, personalized advertising (where UMP /
+                ATT consent is given)
+            </li>
+            <li>
+                Legitimate interest (Art. 6(1)(f)): Firebase Crashlytics, Firebase Remote Config,
+                non-personalized advertising, processing of user-submitted bug reports
+            </li>
+            <li>
+                Performance of a contract (Art. 6(1)(b)): processing of in-app purchases by
+                Google Play / Apple
             </li>
         </ul>
 
-        <h2>6. Children's Privacy</h2>
+        <h2>6. Your Rights Under US State Privacy Laws (CCPA / CPRA / etc.)</h2>
+        <p>
+            If you are a resident of California, Colorado, Connecticut, Virginia, Utah, or another
+            US state with a comparable consumer privacy law, you have the following rights:
+        </p>
+        <ul>
+            <li><strong>Right to know</strong> what personal information is collected about you</li>
+            <li><strong>Right to delete</strong> personal information we hold</li>
+            <li><strong>Right to correct</strong> inaccurate information</li>
+            <li>
+                <strong>Right to opt out of sale or sharing</strong> of personal information for
+                targeted advertising
+            </li>
+            <li><strong>Right to non-discrimination</strong> for exercising these rights</li>
+        </ul>
+        <p>
+            <strong>How to exercise opt-out.</strong> In the AdMob consent form
+            (<strong>Settings &rarr; Ad Privacy Settings</strong>) select the &ldquo;Do not sell or
+            share my personal information&rdquo; option. We also honor the Global Privacy Control
+            (GPC) signal where it is available.
+        </p>
+        <p>
+            <strong>Do Not Sell My Personal Information.</strong> Yomabi itself does not sell
+            personal information. AdMob may share device identifiers with ad partners for
+            personalized advertising; opting out via the UMP form stops this sharing.
+        </p>
+        <p>
+            To exercise any of the above rights, contact us using the address in Section 10.
+        </p>
+
+        <h2>7. Children's Privacy</h2>
         <p>
             Yomabi is not directed at children under the age of 13. We do not knowingly collect
             personal information from children under 13. If you are a parent or guardian and believe
@@ -399,18 +524,19 @@
             address the situation.
         </p>
 
-        <h2>7. Security</h2>
+        <h2>8. Security</h2>
         <p>
             Because Yomabi stores all user data locally on your device, the security of your data
             depends on your device's own security measures (screen lock, encryption, etc.). We
             recommend keeping your device's operating system up to date and using a secure lock screen.
         </p>
         <p>
-            Data transmitted to Firebase and AdMob is encrypted in transit using industry-standard
-            protocols (TLS/SSL).
+            Data transmitted to Firebase, AdMob, and our bug-report endpoint is encrypted in
+            transit using industry-standard protocols (TLS/SSL). Bug-report submissions are
+            additionally signed with HMAC-SHA256.
         </p>
 
-        <h2>8. Changes to This Privacy Policy</h2>
+        <h2>9. Changes to This Privacy Policy</h2>
         <p>
             We may update this Privacy Policy from time to time. When we do, we will revise the
             "Effective date" at the top of this page. We encourage you to review this Privacy Policy
@@ -418,10 +544,10 @@
             app after changes constitutes acceptance of the updated policy.
         </p>
 
-        <h2>9. Contact Us</h2>
+        <h2>10. Contact Us</h2>
         <p>
             If you have any questions or concerns about this Privacy Policy or Yomabi's data
-            practices, please contact us at:
+            practices, or to exercise any of the rights described above, please contact us at:
         </p>
         <p>
             <a href="mailto:b-tok-contact@proton.me">b-tok-contact@proton.me</a>
