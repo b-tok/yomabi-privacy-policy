@@ -147,15 +147,15 @@
     <div class="container">
         <header>
             <h1>Yomabi Privacy Policy</h1>
-            <p>Effective date: April 19, 2026</p>
+            <p>Effective date: April 22, 2026</p>
         </header>
 
         <section>
             <p>
                 This Privacy Policy describes how Yomabi ("the App", "we", "us") collects, uses, and
-                protects information when you use our Android application. Yomabi is a Japanese
-                dictionary and learning app that provides dictionary lookups, OCR-based text
-                recognition, flashcard-based spaced repetition, and other language learning tools.
+                protects information when you use our mobile applications for Android and iOS. Yomabi
+                is a Japanese dictionary and learning app that provides dictionary lookups, OCR-based
+                text recognition, flashcard-based spaced repetition, and other language learning tools.
             </p>
             <div class="info-box">
                 <p>
@@ -179,9 +179,10 @@
             <li>In-app purchase status</li>
         </ul>
         <p>
-            This data is stored in local Room databases and Android DataStore on your device. You have
-            full control over this data and can delete it at any time by clearing the app's data in
-            your device settings or by uninstalling the app.
+            This data is stored in on-device databases and local preference storage (Room / DataStore
+            on Android, equivalent local storage on iOS). You have full control over this data and can
+            delete it at any time from within the app, by clearing the app's data in your device
+            settings (Android), or by uninstalling the app.
         </p>
 
         <h3>1.2 Firebase Analytics (Opt-In)</h3>
@@ -271,12 +272,13 @@
             for details on how Google handles this information.
         </p>
 
-        <h3>1.7 Google Play Billing</h3>
+        <h3>1.7 In-App Purchases (Google Play Billing / Apple In-App Purchase)</h3>
         <p>
-            Yomabi offers in-app purchases (Pro upgrade and optional tips) through Google Play
-            Billing. Purchase transactions are handled by Google Play. Purchase tokens are stored
-            locally on your device only. We do not operate any server that processes or stores
-            payment information.
+            Yomabi offers in-app purchases (Pro upgrade and optional tips) through the platform's
+            billing system &mdash; Google Play Billing on Android and Apple In-App Purchase
+            (StoreKit) on iOS. Purchase transactions are handled by Google or Apple respectively.
+            Purchase tokens or transaction identifiers are stored locally on your device only. We
+            do not operate any server that processes or stores payment information.
         </p>
 
         <h2>2. Device Permissions</h2>
@@ -293,12 +295,12 @@
                 <tr>
                     <td><strong>Camera</strong></td>
                     <td>OCR text recognition from camera or photos</td>
-                    <td>All images are processed entirely on-device using NCNN/PaddleOCR. No images are sent to any server.</td>
+                    <td>All images are processed entirely on-device using local OCR models. No images are sent to any server.</td>
                 </tr>
                 <tr>
-                    <td><strong>Microphone</strong></td>
+                    <td><strong>Microphone / Speech Recognition</strong></td>
                     <td>Voice search (speech-to-text)</td>
-                    <td>Audio is processed via Android's on-device speech recognizer. No audio is transmitted externally.</td>
+                    <td>Audio is processed on-device via the platform speech recognizer (Android SpeechRecognizer / iOS SFSpeechRecognizer). No audio is transmitted to Yomabi's servers.</td>
                 </tr>
             </tbody>
         </table>
@@ -326,8 +328,12 @@
                 <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google Privacy Policy</a>
             </li>
             <li>
-                <strong>Google Play Services / Billing</strong> &mdash;
+                <strong>Google Play Services / Billing</strong> (Android) &mdash;
                 <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google Privacy Policy</a>
+            </li>
+            <li>
+                <strong>Apple In-App Purchase (StoreKit)</strong> (iOS) &mdash;
+                <a href="https://www.apple.com/legal/privacy/" target="_blank" rel="noopener">Apple Privacy Policy</a>
             </li>
         </ul>
         <p>
@@ -343,8 +349,8 @@
         </p>
         <ul>
             <li>Using in-app features to clear individual items (e.g., deleting flashcard decks, clearing search history)</li>
-            <li>Clearing the app's data in your Android device settings</li>
-            <li>Uninstalling the app</li>
+            <li>Clearing the app's data in your device settings (Android)</li>
+            <li>Uninstalling the app (on both Android and iOS, uninstalling removes all locally stored data)</li>
         </ul>
         <p>
             For data collected by Firebase Analytics and Crashlytics, Google's standard data retention
