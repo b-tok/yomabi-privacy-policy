@@ -147,7 +147,7 @@
     <div class="container">
         <header>
             <h1>Yomabi Privacy Policy</h1>
-            <p>Effective date: April 22, 2026</p>
+            <p>Effective date: October 24, 2026</p>
         </header>
 
         <section>
@@ -322,6 +322,56 @@
             random per-install identifier resets when you clear app data or reinstall Yomabi.
         </p>
 
+        <h3>1.9 Voice Search (Optional)</h3>
+        <p>
+            Voice search is off by default. When you turn on <strong>Voice Input</strong> in Settings
+            and tap the microphone button, the audio from your microphone is captured while voice
+            search is listening and passed to a speech recognition service, which turns it into
+            text. Yomabi receives only the recognized text and uses it as your search. Yomabi does
+            not store the audio and does not send it to its own servers.
+        </p>
+        <p>
+            <strong>Android, online.</strong> When your device is connected to the internet, voice
+            search normally uses Google's speech recognition service on your device (for example,
+            Speech Recognition &amp; Synthesis from Google), which sends the audio to Google's
+            servers to turn it into text. Google processes the audio under
+            <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google's Privacy Policy</a>
+            and may do so on servers outside your country, including in the United States (see
+            Section 3). The first time your voice is sent to Google, Yomabi shows a short notice
+            that says so. If your device uses a speech recognition service from another company,
+            that company's privacy policy applies instead.
+        </p>
+        <p>
+            <strong>Android, offline.</strong> When your device is offline, or when you turn on
+            <strong>Offline only</strong> under Voice Input in Settings, voice search uses the
+            Japanese voice pack on your device. The audio stays on your device and is not sent to
+            Google or anyone else.
+        </p>
+        <p>
+            <strong>iOS.</strong> On iOS, voice search uses Apple's speech recognition
+            (SFSpeechRecognizer). Yomabi does not require on-device recognition, so iOS may send
+            the audio to Apple's servers to turn it into text, under
+            <a href="https://www.apple.com/legal/privacy/" target="_blank" rel="noopener">Apple's Privacy Policy</a>.
+            Yomabi receives only the recognized text and does not store the audio.
+        </p>
+        <p>
+            <strong>Microphone indicator (Android).</strong> In two cases the microphone indicator
+            may light up briefly while no voice is being recognized:
+        </p>
+        <ul>
+            <li>
+                If you tap the microphone button while the microphone is blocked with Android's
+                privacy toggle, Yomabi briefly opens the microphone so that Android shows its
+                &ldquo;Unblock device microphone?&rdquo; prompt. Yomabi reads nothing from it, and
+                while the microphone is blocked Android provides only silence.
+            </li>
+            <li>
+                On some phones, shortly after you download the Japanese voice pack, Yomabi checks
+                that the pack is installed by running the speech recognition service on one second
+                of generated silence. The microphone is not used for this check.
+            </li>
+        </ul>
+
         <h2>2. Device Permissions</h2>
 
         <table>
@@ -340,8 +390,8 @@
                 </tr>
                 <tr>
                     <td><strong>Microphone / Speech Recognition</strong></td>
-                    <td>Voice search (speech-to-text)</td>
-                    <td>Audio is processed on-device via the platform speech recognizer (Android SpeechRecognizer / iOS SFSpeechRecognizer). No audio is transmitted to Yomabi's servers.</td>
+                    <td>Voice search (speech-to-text), which is off until you turn on Voice Input; recording audio for your flashcards</td>
+                    <td>On Android, online voice search sends your audio to Google's speech recognition service to turn it into text, under Google's Privacy Policy. Offline voice searches, and all voice searches with &ldquo;Offline only&rdquo; turned on, stay on your device. On iOS, Apple's speech recognition (SFSpeechRecognizer) may send the audio to Apple's servers. Yomabi receives only the recognized text, doesn't store the audio, and doesn't send it to its own servers. Flashcard recordings stay on your device. See Section 1.9.</td>
                 </tr>
                 <tr>
                     <td><strong>Photo Library</strong></td>
@@ -377,6 +427,17 @@
             <li>
                 <strong>Google AdMob + User Messaging Platform</strong> &mdash;
                 <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google Privacy Policy</a>
+            </li>
+            <li>
+                <strong>Google speech recognition</strong> (Android, online voice search only) &mdash;
+                <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google Privacy Policy</a>.
+                Google may process the audio on servers outside your country, including in the
+                United States; see Google's
+                <a href="https://policies.google.com/privacy/frameworks" target="_blank" rel="noopener">data transfer frameworks</a>.
+            </li>
+            <li>
+                <strong>Apple speech recognition</strong> (iOS, voice search) &mdash;
+                <a href="https://www.apple.com/legal/privacy/" target="_blank" rel="noopener">Apple Privacy Policy</a>
             </li>
             <li>
                 <strong>Google Play Services / Billing</strong> (Android) &mdash;
@@ -482,7 +543,8 @@
             </li>
             <li>
                 Performance of a contract (Art. 6(1)(b)): processing of in-app purchases by
-                Google Play / Apple
+                Google Play / Apple; turning your speech into text when you start a voice search
+                (Section 1.9)
             </li>
         </ul>
 
