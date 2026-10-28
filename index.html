@@ -174,7 +174,7 @@
             <li>Search history</li>
             <li>Favorites and bookmarks</li>
             <li>Flashcards, decks, and SRS (spaced repetition) progress</li>
-            <li>Flashcard image and audio attachments</li>
+            <li>Flashcard image and audio attachments, including pictures of your screen that you add to flashcards from Popup Dictionary (Section 1.10)</li>
             <li>User preferences and settings</li>
             <li>In-app purchase status</li>
         </ul>
@@ -385,6 +385,55 @@
             </li>
         </ul>
 
+        <h3>1.10 Popup Dictionary (Optional, Android)</h3>
+        <p>
+            Popup Dictionary lets you look up Japanese words shown in other apps, for example in a
+            video or a manga reader. It is off by default. You turn it on in Yomabi's Settings and
+            start it from its Quick Settings tile, from a button on Yomabi's home screen, or from
+            the Yomabi app icon's shortcut. You can stop it at any time with the Stop button in its
+            notification, with the tile, or in Yomabi.
+        </p>
+        <ul>
+            <li>
+                <strong>Screen capture.</strong> Each time you start Popup Dictionary, Android asks
+                whether Yomabi may capture your screen (on newer Android versions, the entire screen
+                or a single app), and Android shows that the screen is being shared while it runs.
+                Yomabi keeps only the newest picture of the screen in memory and replaces it as the
+                screen changes. When you tap the Yomabi button, Yomabi reads the Japanese text in
+                that picture on your device (on-device OCR) and looks the words up in its on-device
+                dictionary. So that its button can step aside while a video plays, Yomabi also
+                compares small, low-resolution copies of the screen in memory and checks whether
+                any app is playing media (Android doesn't tell it which app).
+            </li>
+            <li>
+                <strong>What stays where.</strong> Screen pictures and the text read from them are
+                processed only on your device and kept in memory only while they are needed. They
+                are never sent to us or to anyone else, and they are not saved to your photo gallery.
+                Two things you start yourself go further: when you add a word to a flashcard deck
+                with Plus, the card gets the picture of the screen as its picture (you can crop or
+                remove it), stored in Yomabi's storage on your device like other flashcard images;
+                and when you open a word or a selected text in Yomabi's search, it becomes a normal
+                search (Sections 1.1 and 1.2).
+            </li>
+            <li>
+                <strong>Display over other apps.</strong> Popup Dictionary shows its floating Yomabi
+                button and the lookup card on top of the app you are using. Android asks you once to
+                allow this in its settings. Yomabi uses it only to draw its own button and card.
+            </li>
+            <li>
+                <strong>Notification.</strong> While Popup Dictionary runs, Android requires a
+                notification (&ldquo;Popup Dictionary is running&rdquo;), which also offers Scan and
+                Stop buttons.
+            </li>
+            <li>
+                <strong>Lookups and ads.</strong> For free users, Popup Dictionary lookups count
+                toward the same daily allowance as camera scans, and the rewarded ads that add
+                lookups are the same Google AdMob ads described in Section 1.6. For free users,
+                turning Popup Dictionary on first shows Google's ad consent form where Google
+                requires one.
+            </li>
+        </ul>
+
         <h2>2. Device Permissions</h2>
 
         <table>
@@ -410,6 +459,21 @@
                     <td><strong>Network state (Android)</strong></td>
                     <td>Voice search checks whether your device has a working internet connection, to choose between online and offline speech recognition</td>
                     <td>Yomabi only reads whether a connection is available. Nothing is sent.</td>
+                </tr>
+                <tr>
+                    <td><strong>Screen capture (Android)</strong></td>
+                    <td>Popup Dictionary: reading Japanese text shown in other apps, only while you have started it</td>
+                    <td>Android asks for your consent at every start. Screen pictures are kept in memory and read on your device; they are never uploaded and not saved to your gallery. A picture is stored on your device only if you add a word to a flashcard deck with Plus. See Section 1.10.</td>
+                </tr>
+                <tr>
+                    <td><strong>Display over other apps (Android)</strong></td>
+                    <td>Popup Dictionary's floating button and lookup card on top of the app you are using</td>
+                    <td>Used only to draw Yomabi's own button and card. No data is collected through it. See Section 1.10.</td>
+                </tr>
+                <tr>
+                    <td><strong>Notifications (Android)</strong></td>
+                    <td>Study reminders, if you turn them on; the &ldquo;Popup Dictionary is running&rdquo; notification with its Scan and Stop buttons</td>
+                    <td>Notifications are created on your device. Nothing is sent.</td>
                 </tr>
                 <tr>
                     <td><strong>Photo Library</strong></td>
