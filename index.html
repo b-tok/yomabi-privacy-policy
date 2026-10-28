@@ -327,19 +327,32 @@
             Voice search is off by default. When you turn on <strong>Voice Input</strong> in Settings
             and tap the microphone button, the audio from your microphone is captured while voice
             search is listening and passed to a speech recognition service, which turns it into
-            text. Yomabi receives only the recognized text and uses it as your search. Yomabi does
+            text. Yomabi uses the recognized text as your search. Normally the speech recognition
+            service records the audio itself. On Android 13 and later, if Android silences the
+            speech recognition service's own recording, Yomabi records the audio itself and passes
+            it straight to the speech recognition service while you speak. Either way, Yomabi does
             not store the audio and does not send it to its own servers.
         </p>
         <p>
             <strong>Android, online.</strong> When your device is connected to the internet, voice
             search normally uses Google's speech recognition service on your device (for example,
             Speech Recognition &amp; Synthesis from Google), which sends the audio to Google's
-            servers to turn it into text. Google processes the audio under
+            servers to turn it into text. This is the same when Yomabi records the audio and passes
+            it on. Google processes the audio under
             <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google's Privacy Policy</a>
             and may do so on servers outside your country, including in the United States (see
-            Section 3). The first time your voice is sent to Google, Yomabi shows a short notice
-            that says so. If your device uses a speech recognition service from another company,
-            that company's privacy policy applies instead.
+            Section 3). The first time voice search sends your voice to Google from within Yomabi,
+            Yomabi shows a short notice that says so. If your device uses a speech recognition
+            service from another company, that company's privacy policy applies instead.
+        </p>
+        <p>
+            <strong>Android, Google's voice input window.</strong> On some phones, Android doesn't
+            let Google's speech recognition service use the microphone while Yomabi is on screen.
+            Voice search then opens Google's own voice input window instead. That window is part of
+            Google's app: it records your voice itself, under Google's Privacy Policy, and gives
+            Yomabi only the recognized text. When your device is offline, or when
+            <strong>Offline only</strong> is on, Yomabi asks the window to recognize your speech on
+            your device.
         </p>
         <p>
             <strong>Android, offline.</strong> When your device is offline, or when you turn on
@@ -352,7 +365,7 @@
             (SFSpeechRecognizer). Yomabi does not require on-device recognition, so iOS may send
             the audio to Apple's servers to turn it into text, under
             <a href="https://www.apple.com/legal/privacy/" target="_blank" rel="noopener">Apple's Privacy Policy</a>.
-            Yomabi receives only the recognized text and does not store the audio.
+            Yomabi uses the recognized text as your search and does not store the audio.
         </p>
         <p>
             <strong>Microphone indicator (Android).</strong> In two cases the microphone indicator
@@ -391,7 +404,12 @@
                 <tr>
                     <td><strong>Microphone / Speech Recognition</strong></td>
                     <td>Voice search (speech-to-text), which is off until you turn on Voice Input; recording audio for your flashcards</td>
-                    <td>On Android, online voice search sends your audio to Google's speech recognition service to turn it into text, under Google's Privacy Policy. Offline voice searches, and all voice searches with &ldquo;Offline only&rdquo; turned on, stay on your device. On iOS, Apple's speech recognition (SFSpeechRecognizer) may send the audio to Apple's servers. Yomabi receives only the recognized text, doesn't store the audio, and doesn't send it to its own servers. Flashcard recordings stay on your device. See Section 1.9.</td>
+                    <td>On Android, online voice search sends your audio to Google's speech recognition service to turn it into text, under Google's Privacy Policy. Offline voice searches, and all voice searches with &ldquo;Offline only&rdquo; turned on, stay on your device. On iOS, Apple's speech recognition (SFSpeechRecognizer) may send the audio to Apple's servers. On Android 13 and later, when Android silences the speech recognition service's own recording, Yomabi records the audio and passes it straight to that service. Yomabi doesn't store the audio and doesn't send it to its own servers. Flashcard recordings stay on your device. See Section 1.9.</td>
+                </tr>
+                <tr>
+                    <td><strong>Network state (Android)</strong></td>
+                    <td>Voice search checks whether your device has a working internet connection, to choose between online and offline speech recognition</td>
+                    <td>Yomabi only reads whether a connection is available. Nothing is sent.</td>
                 </tr>
                 <tr>
                     <td><strong>Photo Library</strong></td>
