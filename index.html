@@ -161,9 +161,10 @@
                 <p>
                     <strong>In short:</strong> Yomabi is designed with privacy in mind. Your search
                     history, flashcards, decks and study progress are stored only on your device.
-                    Usage analytics are optional: in the European Economic Area and the United
-                    Kingdom they stay off unless you opt in; elsewhere they are on by default, and
-                    you can turn them off in Settings at any time. When they are on, they can include
+                    Usage analytics are optional: if your device seems to be in the European
+                    Economic Area or the United Kingdom (see Section 1.2), they stay off unless you
+                    opt in; elsewhere they are on by default, and you can turn them off in Settings
+                    at any time. When they are on, they can include
                     the words you search for and study (Section 1.2). No user accounts or
                     server-side storage exist.
                 </p>
@@ -197,12 +198,17 @@
         <h3>1.2 Firebase Analytics (Optional)</h3>
         <p>
             Yomabi integrates Firebase Analytics to help us understand how the app is used and to
-            improve the experience. If your device's region is set to a country in the European
-            Economic Area or to the United Kingdom, analytics collection is
-            <strong>disabled by default</strong>: on first launch, a consent dialog asks whether you
-            would like to enable usage analytics. In other regions, analytics collection is on by
-            default. Wherever you are, you can turn it on or off at any time with
-            <strong>Usage Analytics</strong> in the app's Settings.
+            improve the experience. If your device seems to be in the European Economic Area or the
+            United Kingdom, analytics collection is <strong>disabled by default</strong>: on first
+            launch, a consent dialog asks whether you would like to enable usage analytics. The app
+            goes by your device's region setting and, on Android, also by your SIM card's country,
+            the country of the mobile network you are connected to, and your time zone. If any one
+            of these points to a country in the European Economic Area (including EU regions such
+            as the Canary Islands, the Azores or R&eacute;union) or to the United Kingdom, you are
+            asked first. If analytics was on in an earlier version of the Android app and one of
+            these now points there, analytics is turned off until you answer the dialog. In other
+            regions, analytics collection is on by default. Wherever you are, you can turn it on or
+            off at any time with <strong>Usage Analytics</strong> in the app's Settings.
         </p>
         <p>When enabled, Firebase Analytics collects:</p>
         <ul>
@@ -638,10 +644,11 @@
                 <strong>Right to object (Art. 21):</strong> You may object to processing based on
                 legitimate interest &mdash; specifically Crashlytics and Remote Config. Contact us
                 and we will stop processing; you can also clear app data (which resets the FID) or
-                uninstall (which stops all future requests).
+                uninstall (which stops all future requests). Where analytics is on by default, you
+                can turn it off yourself with <strong>Usage Analytics</strong> in Settings.
             </li>
             <li>
-                <strong>Right to withdraw consent:</strong> For Analytics (consent-based), you may
+                <strong>Right to withdraw consent:</strong> If you opted in to Analytics, you may
                 withdraw consent at any time in Settings.
             </li>
             <li>
@@ -658,12 +665,14 @@
         </p>
         <ul>
             <li>
-                Consent (Art. 6(1)(a)): Firebase Analytics, personalized advertising (where UMP /
-                ATT consent is given)
+                Consent (Art. 6(1)(a)): Firebase Analytics where the app asks you before turning
+                it on (Section 1.2), personalized advertising (where UMP / ATT consent is given)
             </li>
             <li>
                 Legitimate interest (Art. 6(1)(f)): Firebase Crashlytics, Firebase Remote Config,
-                non-personalized advertising, processing of user-submitted bug reports
+                non-personalized advertising, processing of user-submitted bug reports, and
+                Firebase Analytics where it is on by default, for example in Switzerland (our
+                interest in improving the app; you can turn it off in Settings at any time)
             </li>
             <li>
                 Performance of a contract (Art. 6(1)(b)): processing of in-app purchases by
