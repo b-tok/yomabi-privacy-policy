@@ -159,9 +159,13 @@
             </p>
             <div class="info-box">
                 <p>
-                    <strong>In short:</strong> Yomabi is designed with privacy in mind. All your
-                    personal study data stays on your device. Analytics are disabled by default and
-                    require your explicit opt-in. No user accounts or server-side storage exist.
+                    <strong>In short:</strong> Yomabi is designed with privacy in mind. Your search
+                    history, flashcards, decks and study progress are stored only on your device.
+                    Usage analytics are optional: in the European Economic Area and the United
+                    Kingdom they stay off unless you opt in; elsewhere they are on by default, and
+                    you can turn them off in Settings at any time. When they are on, they can include
+                    the words you search for and study (Section 1.2). No user accounts or
+                    server-side storage exist.
                 </p>
             </div>
         </section>
@@ -179,28 +183,45 @@
             <li>In-app purchase status</li>
         </ul>
         <p>
+            If you have usage analytics turned on, individual searches and some flashcard details
+            are also sent to Firebase Analytics as described in Section 1.2. Your stored history,
+            decks and progress themselves are never uploaded.
+        </p>
+        <p>
             This data is stored in on-device databases and local preference storage (Room / DataStore
             on Android, equivalent local storage on iOS). You have full control over this data and can
             delete it at any time from within the app, by clearing the app's data in your device
             settings (Android), or by uninstalling the app.
         </p>
 
-        <h3>1.2 Firebase Analytics (Opt-In)</h3>
+        <h3>1.2 Firebase Analytics (Optional)</h3>
         <p>
             Yomabi integrates Firebase Analytics to help us understand how the app is used and to
-            improve the experience. Analytics collection is <strong>disabled by default</strong>. On
-            first launch, a consent dialog asks whether you would like to enable anonymous usage
-            analytics. You can change this choice at any time in the app's Settings.
+            improve the experience. If your device's region is set to a country in the European
+            Economic Area or to the United Kingdom, analytics collection is
+            <strong>disabled by default</strong>: on first launch, a consent dialog asks whether you
+            would like to enable usage analytics. In other regions, analytics collection is on by
+            default. Wherever you are, you can turn it on or off at any time with
+            <strong>Usage Analytics</strong> in the app's Settings.
         </p>
         <p>When enabled, Firebase Analytics collects:</p>
         <ul>
-            <li>Anonymous usage events (e.g., screen views, searches, flashcard creation, OCR usage)</li>
+            <li>Usage events (e.g., screen views, searches, flashcard creation and reviews, OCR usage)</li>
+            <li>
+                The words involved in some of these events: the text you search for (a word or a
+                sentence, however you entered it, including by voice, OCR or Popup Dictionary), the
+                dictionary word of a result you open, the word and reading on a flashcard you create,
+                edit or review, and deck names
+            </li>
             <li>General device information (device model, OS version, screen size)</li>
             <li>App version and session duration</li>
         </ul>
         <p>
-            This data is anonymous and aggregated. It does not include your search queries, flashcard
-            content, or any personal study data.
+            This data is linked to a random identifier for your installation of the app, not to
+            your name or your Google account, and we look at it in aggregate. It does not include
+            flashcard images or recordings, example sentences, or the pictures that the camera or
+            Popup Dictionary capture; of the text they read, only what you then search for is
+            included, as above.
         </p>
 
         <h3>1.3 Firebase Crashlytics (Legitimate Interest)</h3>
@@ -211,15 +232,24 @@
         </p>
         <p>Crashlytics collects:</p>
         <ul>
-            <li>Crash stack traces and error logs</li>
+            <li>
+                Crash stack traces and error logs, including crashes in the app's native code (for
+                example, the on-device text recognition engine). For a native crash, the report
+                contains a snapshot of the app's state at the moment of the crash (a
+                &ldquo;minidump&rdquo;), which Google keeps only while it processes the crash.
+            </li>
+            <li>The names of the app events that came just before the crash and the screen you were on</li>
             <li>Device model and manufacturer</li>
             <li>Operating system version</li>
             <li>App version</li>
             <li>A Firebase Installation ID (see Section 1.5)</li>
         </ul>
         <p>
-            Crash data does not include any of your personal study content, search queries, or
-            flashcard data. To object to this processing under Art. 21 GDPR, please contact us
+            If you have usage analytics turned off, crash data does not include your search
+            queries, flashcard content, or other personal study content. If you have usage
+            analytics turned on, a crash report also includes your most recent search text and the
+            details of those recent app events (the same data as in Section 1.2), so that we can
+            reproduce the crash. To object to this processing under Art. 21 GDPR, please contact us
             using the address in Section 10; you can also clear the app's data to reset the FID or
             uninstall the app to stop all future crash reports.
         </p>
@@ -245,7 +275,7 @@
         <h3>1.5 Firebase Installation ID</h3>
         <p>
             Any Firebase service that makes a network request &mdash; Crashlytics and Remote Config
-            (always on under legitimate interest) and Analytics (only after you opt in) &mdash;
+            (always on under legitimate interest) and Analytics (only while usage analytics is on) &mdash;
             transmits a Firebase Installation ID (FID). The FID is a randomly generated identifier
             that represents your installation of Yomabi. Google uses it to associate requests from
             the same installation across the Firebase services that are active.
@@ -553,7 +583,8 @@
         <p>
             For data collected by Firebase Analytics and Crashlytics, Google's standard data retention
             policies apply. Firebase Analytics data is retained for up to 14 months by default.
-            Crashlytics data is retained for 90 days.
+            Crashlytics data is retained for 90 days; minidumps from native crashes are discarded
+            once the crash has been processed.
         </p>
         <p>
             Bug report submissions are retained in a private Google Sheet for as long as we consider
